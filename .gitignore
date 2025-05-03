@@ -1,31 +1,37 @@
-# Python virtual environment
+# Environments
 venv/
 neuro_pred/
 env/
 .env
 
-# Python caches
+# Python Caches
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.ipynb_checkpoints/
 
-# IDE / Editor specific files
+# IDE / Editor Files
 .idea/
-.vscode/ # Usually okay to commit .vscode/settings.json if standardized, but ignore launch/user stuff
+.vscode/
 *.swp
 
-# Data files (VERY IMPORTANT!)
-data/
-*.nii
-*.nii.gz
-*.csv # If you have large CSVs in /data. Processed/small CSVs elsewhere might be okay to track.
-
-# Large files & Outputs (Adjust paths as needed)
-models/trained_models/
-results/raw_predictions/
-wandb/ # W&B local cache/debug files
-
-# OS specific files
+# OS Files
 .DS_Store
 Thumbs.db
+
+# W&B Local Files
+wandb/
+
+# Data - IMPORTANT!
+data/
+*.xlsx
+*.csv
+*.nii
+*.nii.gz
+*.nifti.img
+*.nifti.hdr
+
+# Outputs / Models (Adjust paths as needed)
+models/trained_models/
+results/raw_predictions/
