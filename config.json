@@ -1,0 +1,17 @@
+{
+    "data": {
+        "clinical_excel_path": "data/oasis_longitudinal_demographics-8d83e569fa2e2d30.xlsx",
+        "mri_base_paths": [
+            "data/OAS2_RAW_PART1",
+            "data/OAS2_RAW_PART2"
+        ],
+        "output_dir_base": "notebooks/outputs/"
+    },
+    "mri_verification": {
+        "mpr_img_pattern": "^(mpr-\\d+)\\.nifti\\.img$"
+    },
+    "wandb": {
+        "project_name": "longitudinal-neuroimaging",
+        "entity": "alicegon339-alicia-gonsalves"
+    }
+}

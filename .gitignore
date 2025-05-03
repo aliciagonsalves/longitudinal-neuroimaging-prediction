@@ -32,6 +32,9 @@ data/
 *.nifti.img
 *.nifti.hdr
 
+# Ignore generated outputs from notebooks
+notebooks/outputs/
+
 # Outputs / Models (Adjust paths as needed)
 models/trained_models/
 results/raw_predictions/
