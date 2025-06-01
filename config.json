@@ -13,5 +13,55 @@
     "wandb": {
         "project_name": "longitudinal-neuroimaging",
         "entity": "alicegon339-alicia-gonsalves"
+    },
+    "paths": {
+        "verification_csv": "notebooks/outputs/01_Data_Exploration/verification_details.csv",
+        "preprocessed_mri_dir": "data/preprocessed_mni",
+        "intermediate_mri_dir": "data/intermediate_mri",
+        "template_cache_dir": "data/templates"
+    },
+    "preprocessing_config": {
+        "select_mpr_scan": "mpr-1",
+        "run_convert_to_nii": true,
+        "run_reorient": true,
+        "run_n4": true,
+        "run_skullstrip": true,
+        "skullstrip_method": "antspynet",
+        "run_register": true,
+        "templateflow_id": {
+            "template": "MNI152NLin2009cAsym", 
+            "resolution": 1,                  
+            "desc": "brain",                  
+            "suffix": "T1w",                 
+            "extension": ".nii.gz"            
+        },
+        "final_output_suffix": "_preprocessed_mni.nii.gz",
+        "keep_intermediates": false
+    },
+    "analysis_inputs_oasis2": {
+        "test_data_parquet": "notebooks/outputs/03_Feature_Engineering_Splitting/cohort_test.parquet",
+        "scaler_path": "notebooks/outputs/04_Fit_Preprocessors/standard_scaler.joblib",
+        "imputer_path": "notebooks/outputs/04_Fit_Preprocessors/simple_imputer_median.joblib",
+        "mri_data_dir": "data/preprocessed_mni"
+    },
+    "cnn_model_params": {
+        "input_shape": [1, 193, 229, 193],
+        "output_features": 128
+    },
+    "pipeline_artefact_locators_oasis2": {
+        "exploration_subdir": "01_Data_Exploration_oasis2",
+        "verification_csv_fname": "verification_details_oasis2.csv",
+        "cohort_def_subdir": "02_Cohort_Definition_oasis2",
+        "final_cohort_fname": "final_analysis_cohort_oasis2.csv",
+        "feature_eng_subdir": "03_Feature_Engineering_Splitting_oasis2",
+        "preprocessors_subdir": "04_Fit_Preprocessors_oasis2",
+        "train_baseline_subdir": "06_Train_Baseline_Model_oasis2",
+        "train_hybrid_subdir": "07_Train_Hybrid_CNNLSTM_Model_oasis2",
+        "analysis_subdir": "08_Model_Analysis_Interpretability_Uncertainty_oasis2",
+        "train_data_fname": "cohort_train_oasis2.parquet",
+        "val_data_fname": "cohort_validation_oasis2.parquet",
+        "test_data_fname": "cohort_test_oasis2.parquet",
+        "scaler_fname_pattern": "{scaling_strategy}_oasis2.joblib",
+        "imputer_fname_pattern": "simple_imputer_{imputation_strategy}_oasis2.joblib"
     }
 }

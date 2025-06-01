@@ -4,11 +4,12 @@ neuro_pred/
 env/
 .env
 
-# Python Caches
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook Checkpoints
 .ipynb_checkpoints/
 
 # IDE / Editor Files
@@ -19,9 +20,6 @@ __pycache__/
 # OS Files
 .DS_Store
 Thumbs.db
-
-# W&B Local Files
-wandb/
 
 # Data - IMPORTANT!
 data/
@@ -34,7 +32,5 @@ data/
 
 # Ignore generated outputs from notebooks
 notebooks/outputs/
-
-# Outputs / Models (Adjust paths as needed)
-models/trained_models/
-results/raw_predictions/
+notebooks/artifacts/
+notebooks/wandb/
